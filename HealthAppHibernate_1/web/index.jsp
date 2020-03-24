@@ -122,6 +122,8 @@
                         
                         
     <center>
+        <h2> ${progressofsteps}</h2>    
+     <h2 style="color: #FFA500">  ${msgTooManySteps} </h2>
      ${msg2}
      ${msg3}    
     <form>
@@ -444,7 +446,7 @@
     </center>      
                 
              
-           <h2 style="color: #FFA500">  ${msgTooManySteps} </h2>
+         
 		</section>
 
 		<section id="progress" class="colored-section">
@@ -778,7 +780,7 @@
     <form> 
         <table>    
              <c:if test="${(member.loctorf28)}">
-                 STLCC - Meramac Passed Again
+                 STLCC - Meramec Passed Again
         
   
            </c:if> 

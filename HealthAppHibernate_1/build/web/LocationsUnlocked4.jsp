@@ -170,7 +170,7 @@
   
   
     <img src = "images/WildWoodPicGoogleMaps.jpg" width="700" height="700">   
-    <a href="index.jsp">Back to the Main STLCC Virtual Tour page </a>
+   <button onclick="window.history.go(-1)"><h2 style="color: orange">go back a page to the Main STLCC Virtual Tour page </h2></button>
     
     
     </body>

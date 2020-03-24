@@ -107,10 +107,10 @@
             <form id="starttourornot" action="MemberUpdate" method="post">
           <table>
             <tr>
-                <td>Do you want to start the Tour de STLCC ?<br></td>
+                <td><h2>Do you want to start the STLCC Virtual Tour ?</h2><br></td>
             <tr>
             <tr> 
-                <td><input type="submit" value="Yes" onclick=form.action="index.jsp">
+                <td><input type="submit" value="Yes" onclick=form.action="ToTheSplashScreen">
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     
                 <input type="submit" value="No" onclick=form.action="HealthLogon.jsp"></td>
