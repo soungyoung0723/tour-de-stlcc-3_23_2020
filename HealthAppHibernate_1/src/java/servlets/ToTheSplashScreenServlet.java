@@ -37,7 +37,7 @@ public class ToTheSplashScreenServlet extends HttpServlet
         response.setContentType("text/html;charset=UTF-8");
         
         
-        String URL = "/SplashScreen.jsp";
+        String URL = "/index.jsp";
         String msg ="";
         
          HttpSession session = request.getSession();

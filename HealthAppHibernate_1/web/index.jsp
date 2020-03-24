@@ -121,7 +121,11 @@
                        
                         
                         
-                        
+    <center>
+        <h2> ${progressofsteps}</h2>    
+     <h2 style="color: #FFA500">  ${msgTooManySteps} </h2>
+     ${msg2}
+     ${msg3}    
     <form>
     
     <table>
@@ -134,8 +138,12 @@
             
     </table>         
     </form>                     
-   <form>
+    </center>
     
+   <center>                       
+   <form>
+        
+   
     <table>
                  
             <c:if test="${(member.loctorf2)}">
@@ -146,8 +154,9 @@
             
     </table>         
     </form>        
-          
-     <form>
+    </center>         
+    <center>   
+    <form>
     
     <table>
           
@@ -158,8 +167,9 @@
          </c:if> 
         
     </table>
-     </form>     
-         
+    </form>     
+    </center>
+    <center>                      
     <form>
         <table>   
            <c:if test="${(member.loctorf4)}">
@@ -169,7 +179,8 @@
            </c:if> 
     </table>  
     </form>    
-        
+    </center>
+    <center>  
     <form> 
         <table>    
              <c:if test="${(member.loctorf5)}">
@@ -179,6 +190,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
      <form> 
         <table>    
              <c:if test="${(member.loctorf6)}">
@@ -188,6 +201,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
      <form> 
         <table>    
              <c:if test="${(member.loctorf7)}">
@@ -197,6 +212,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf8)}">
@@ -206,6 +223,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
         <form> 
         <table>    
              <c:if test="${(member.loctorf9)}">
@@ -215,6 +234,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
        <form> 
         <table>    
              <c:if test="${(member.loctorf10)}">
@@ -224,6 +245,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
      <form> 
         <table>    
              <c:if test="${(member.loctorf11)}">
@@ -233,6 +256,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf12)}">
@@ -242,7 +267,9 @@
            </c:if> 
         </table>
     </form>
-    <form> 
+    <form>
+    </center>
+    <center>                      
         <table>    
              <c:if test="${(member.loctorf13)}">
                 ${msg16}
@@ -251,6 +278,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
      <form> 
         <table>    
              <c:if test="${(member.loctorf14)}">
@@ -260,6 +289,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf15)}">
@@ -269,6 +300,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf16)}">
@@ -278,6 +311,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
      <form> 
         <table>    
              <c:if test="${(member.loctorf17)}">
@@ -287,6 +322,8 @@
            </c:if> 
         </table>
     </form>
+    </center> 
+    <center>                      
      <form> 
         <table>    
              <c:if test="${(member.loctorf18)}">
@@ -296,6 +333,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf19)}">
@@ -305,6 +344,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf20)}">
@@ -314,6 +355,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf21)}">
@@ -323,6 +366,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf22)}">
@@ -332,6 +377,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf23)}">
@@ -341,6 +388,8 @@
            </c:if> 
         </table>
     </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf24)}">
@@ -349,7 +398,9 @@
   
            </c:if> 
         </table>
-    </form>                    
+    </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf25)}">
@@ -358,7 +409,9 @@
   
            </c:if> 
         </table>
-    </form>      
+    </form> 
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf26)}">
@@ -367,7 +420,9 @@
   
            </c:if> 
         </table>
-    </form>                    
+    </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf27)}">
@@ -376,7 +431,9 @@
   
            </c:if> 
         </table>
-    </form>            
+    </form>
+    </center>
+    <center>                      
     <form> 
         <table>    
              <c:if test="${(member.loctorf28)}">
@@ -385,11 +442,11 @@
   
            </c:if> 
         </table>
-    </form>            
+    </form>
+    </center>      
                 
-              ${msg2}
-           ${msg3}
-           <h2 style="color: #FFA500">  ${msgTooManySteps} </h2>
+             
+         
 		</section>
 
 		<section id="progress" class="colored-section">
@@ -723,7 +780,7 @@
     <form> 
         <table>    
              <c:if test="${(member.loctorf28)}">
-                 STLCC - Meramac Passed Again
+                 STLCC - Meramec Passed Again
         
   
            </c:if> 

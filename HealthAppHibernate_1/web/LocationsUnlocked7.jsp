@@ -58,8 +58,8 @@
         
   
     <img src = "images/CorporateCollegePicGoogleMaps.jpg" style =" align-content: center" width="1152" height="648">   
-    <a href="index.jsp"><h2 style="color: orange">Back to the Main STLCC Virtual Tour page </h2></a>
-    
+   
+   <button onclick="window.history.go(-1)"><h2 style="color: orange">go back a page to the Main STLCC Virtual Tour page </h2></button> 
     
     </body>
     
