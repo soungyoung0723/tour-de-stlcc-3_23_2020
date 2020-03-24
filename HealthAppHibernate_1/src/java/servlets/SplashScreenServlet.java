@@ -169,7 +169,7 @@ public class SplashScreenServlet extends HttpServlet
                
                
                
-               msg2 +="number entered was not a number " +  r.getMessage() + " <br>";
+               msg2 +="number entered was not a number " + "Error: " + r.getMessage() + " <br>";
                
              
                
@@ -1916,7 +1916,7 @@ public class SplashScreenServlet extends HttpServlet
                                  + "Yes" + "</button>" 
                                  + "<a href='LocationsUnlocked23.jsp'>"+"see location "+ "</a>"+"&nbsp;"+
                                 "&nbsp"+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp" +
-                      "<input type='button' name='No' value='No'>"+  "<a href='index.jsp' id='splash'>"+" stay on this webpage "+
+                      "<input type='button' name='No' value='No'>"+  "<a href='index.jsp' id='splash'>"+" stay on this webpage and clear messages "+
               "</a>"+"</td>"+"<br>" ;               
                     
                          //MemberDB.setLocationValueForMemberToTrueVar2(true,m3.getMemid(),2);   
