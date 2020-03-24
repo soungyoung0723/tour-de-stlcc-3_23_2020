@@ -169,7 +169,7 @@ public class SplashScreenServlet extends HttpServlet
                
                
                
-               msg2 +="number entered was not a number " + "Error: " + r.getMessage() + " <br>";
+               msg2 +="number entered was not a integer number " + "Error: " + r.getMessage() + " <br>";
                
              
                
@@ -194,7 +194,8 @@ public class SplashScreenServlet extends HttpServlet
                 else if(result==1)    
                 {
                 
-                    msg2 += " number entered was too large " +"<br>";
+                    msg2 += " number entered was too large " +"<br>" + ""
+                            + "number must be less than or equal to "+Integer.MAX_VALUE;
                 
                 }
                 else if(result ==-1)
