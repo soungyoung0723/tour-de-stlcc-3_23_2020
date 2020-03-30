@@ -5,12 +5,18 @@
  */
 package servlets;
 
+import java.awt.*;
+import javax.swing.*;
 import business.Member;
 import business.MemberDB;
+import business.Panel1;
 import business.ProgressBar;
 import business.RouteWithSteps;
 import business.RouteWithStepsDB;
+import java.applet.Applet;
 import static java.awt.SystemColor.window;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -18,6 +24,8 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.sql.Date;
 import java.text.DecimalFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -106,8 +114,12 @@ public class SplashScreenServlet extends HttpServlet
         String msg33 ="";
        
         String msg34 ="";
+      
+  
         
-        
+
+
+
         boolean noErrorsAbove =false;
         HttpSession session = request.getSession();
         
@@ -136,16 +148,21 @@ public class SplashScreenServlet extends HttpServlet
             
             if("false".equals(m1.getTourfinished().trim()))
             {
-                steps = Integer.parseInt(request.getParameter("howmanystepstoday"));
+                steps = Integer.parseInt(request.getParameter("howmanystepstoday"));//gets 
+                                            //the steps as a string then converts it
+                                            //to a integer which is stored inside
+                                            //of steps
             
-            
+               noErrorsAbove=true;
             }
-          
-            noErrorsAbove=true;
+           
+           
             
         }
         catch(Exception e)
         {
+            
+            noErrorsAbove=false;
             
             //msg2 += "ERROR: " + e.getMessage();
             //msg2 +="Enter a number of steps 0 or greater ";
@@ -313,9 +330,14 @@ public class SplashScreenServlet extends HttpServlet
         if(enterWasPressed==true && steps >= 0 &&noErrorsAbove==true)
         {
             
+            
+            
             int counter1 =0;
             
-            int counter2 = steps;
+            int counter2 = steps;//counter2 is set equal to the steps that were 
+                                 //converted to a integer value which was pulled
+                                 //from the jsp page which was a string value that
+                                 //got converted to the integer stored in steps
             if(counter2 > 30000)
             {
                 
@@ -348,7 +370,8 @@ public class SplashScreenServlet extends HttpServlet
              
             
              
-            int stepsFromDataBase =steps1;
+            int stepsFromDataBase =steps1;//creates a variable that is set to the
+                                            //steps from the database
            
              double caloriesBurnedForDay = 0.0;
                   caloriesBurnedForDay =  ((steps * 30.0)/63360)* m .getWeight() * .653; 
@@ -386,13 +409,124 @@ public class SplashScreenServlet extends HttpServlet
             MemberDB.settotalCalories(truncatedDouble, m);
             
             
-            int totalSteps = steps + stepsFromDataBase; 
+            int totalSteps = steps + stepsFromDataBase; //this should be where the
+                                        //steps pulled from the jsp page are added to the 
+                                        //steps from the database
         
-            MemberDB.setTotalSteps(totalSteps, m);
+            MemberDB.setTotalSteps(totalSteps, m);//this should be where
+                                        //the new totalsteps are set in the database
+                                        //after they were added togethter and put into 
+                                        //the variable totalSteps
            
-          
+            double trucatedDoubleForProgress=0.0;
             
             double progressOfSteps = (totalSteps/205920.0) * 100;
+            trucatedDoubleForProgress = BigDecimal.valueOf(progressOfSteps)
+                        .setScale(0, RoundingMode.HALF_UP)
+                        .doubleValue();
+            
+            //beggining of progress bar
+            
+              
+                //Panel1 panel = new Panel1(progressOfSteps);
+            
+               //ProgressBar progressBar = new ProgressBar(progressOfSteps);
+        
+      
+ 
+       
+        
+        //         Timer t = new Timer(10000, (ActionListener) this);    // Timer in 10 seconds
+//         t.start();
+
+//  DisposeFrame dispose = new DisposeFrame(1,frame);
+
+
+
+       
+
+
+
+
+
+// java.lang.Thread.sleep(1000);
+//frame.dispose();
+            
+             
+         
+         
+       
+         
+         
+         
+          //frame.dispose();
+         
+        String count ="";  
+        count =    MemberDB.getCurrentCounter(m) + "";
+        
+        
+        
+        
+        /*
+        
+        
+        final JFrame frames = new JFrame("JProgress Demo");
+        
+        // creates progress bar
+        final JProgressBar pb = new JProgressBar();
+        pb.setMinimum(0);
+        pb.setMaximum(100);
+        pb.setStringPainted(true);
+ 
+        // beggining of code for progress bar
+       
+        
+        
+        frames.setLayout(new FlowLayout());
+        frames.getContentPane().add(pb);
+ 
+        
+        //frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        //frame.setSize(300, 200);
+        //frame.setVisible(true);
+ 
+        
+        
+      frames.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+      frames.setSize(300, 200);
+      frames.setLocationRelativeTo(null);
+
+      frames.setVisible(true);
+
+      
+   
+       
+    
+       
+        // update progressbar
+        for (int J = 0; J <= progressOfSteps; J++) 
+        {
+            final int currentValue = J;
+            try 
+            {
+                SwingUtilities.invokeLater(new Runnable()
+                {
+                    public void run() 
+                    {
+                        pb.setValue(currentValue);
+                    }
+                });
+                java.lang.Thread.sleep(0);
+            } catch (InterruptedException e) 
+            {
+                JOptionPane.showMessageDialog(frames, e.getMessage());
+            }
+        }
+ 
+        */
+        //end for code of progress bar
+            
+        //   frames.dispatchEvent(new WindowEvent(frames, WindowEvent.WINDOW_CLOSING));
             
             String percentComplete =""; 
           Double truncatedDouble1=0.0;
@@ -408,6 +542,7 @@ public class SplashScreenServlet extends HttpServlet
                 tourFinished=true;
                 percentComplete = " The Tour is complete ";
                 request.setAttribute("progressofsteps",percentComplete);
+              
                 
             }
         }    
@@ -426,7 +561,7 @@ public class SplashScreenServlet extends HttpServlet
                 percentComplete = truncatedDouble1 + " % of tour complete " + "<br>" ;
                 
                 request.setAttribute("progressofsteps", percentComplete);
-            
+                request.setAttribute("percentcompleteforbar", truncatedDouble1);
             
             }
  
@@ -2411,7 +2546,17 @@ public class SplashScreenServlet extends HttpServlet
         }
        
         URL = "/index.jsp";
+            
+         
+        if(enterWasPressed==true&& noErrorsAbove==true)
+        {
+            
+            request.setAttribute("enterWasPressed", enterWasPressed);
+            
+        }
        
+        request.setAttribute("noErrorsAbove", noErrorsAbove);
+        request.setAttribute("enterWasPressed", enterWasPressed);
         session.setAttribute("member", m);
         session.setAttribute("routewithsteps",route);
         request.setAttribute("msg2", msg2);

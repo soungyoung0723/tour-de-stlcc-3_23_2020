@@ -38,6 +38,12 @@ and open the template in the editor.
    
 }
 
+#wrapper 
+{
+  display: flex;
+  justify-content: center;
+}
+
 
 
     

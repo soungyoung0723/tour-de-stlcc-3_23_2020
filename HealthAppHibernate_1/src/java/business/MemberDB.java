@@ -463,7 +463,8 @@ Transaction tx = session2.beginTransaction();
 
 int updatedEntities;
             updatedEntities = session2.createQuery( "update Member c set c.steps = :newName where c.memid = :oldName" )
-                    .setInteger("newName", steps )
+                    .setInteger("newName", steps )//updates the
+                                                 //database to the new number of steps
                     .setString( "oldName", m.getMemid() )
                     .executeUpdate();
 tx.commit();
@@ -672,7 +673,8 @@ Transaction tx = session2.beginTransaction();
 
 
            Query q  = session2.createQuery( "SELECT steps FROM Member c WHERE c.memid =:oldName" );
-                            q.setString("oldName", m.getMemid() );
+                            q.setString("oldName", m.getMemid() );//gets the
+                                                                  //steps from the database
                            
                             
            steps = Integer.parseInt(q.uniqueResult().toString());

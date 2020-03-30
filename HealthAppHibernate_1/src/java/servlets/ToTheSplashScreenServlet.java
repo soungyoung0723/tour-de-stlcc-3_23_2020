@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JFrame;
 
 /**
  *
@@ -51,8 +52,9 @@ public class ToTheSplashScreenServlet extends HttpServlet
          
          request.setAttribute("m1", m1);
         
-         
+         final JFrame frame = new JFrame("JProgress Demo");
         
+         
         
         
         session.setAttribute("m1", m1);

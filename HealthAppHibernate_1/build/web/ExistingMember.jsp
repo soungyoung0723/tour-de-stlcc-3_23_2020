@@ -115,12 +115,7 @@
                     
                 <input type="submit" value="No" onclick=form.action="HealthLogon.jsp"></td>
                 
-                
-                
-                
-                   
-           
-                
+                     
             </tr>
           </table>
             
