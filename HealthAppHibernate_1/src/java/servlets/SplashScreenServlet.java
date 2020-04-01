@@ -85,7 +85,7 @@ public class SplashScreenServlet extends HttpServlet
         String msg9 ="";
         
         String msgTest ="";
-        
+        String tourFnished ="";
         
         String msg28 ="";
        String msg29 ="";
@@ -419,12 +419,29 @@ public class SplashScreenServlet extends HttpServlet
                                         //the variable totalSteps
            
             double trucatedDoubleForProgress=0.0;
+            double progressOfSteps =0.0;
+           if(progressOfSteps <= 100)
+           {
             
-            double progressOfSteps = (totalSteps/205920.0) * 100;
+            progressOfSteps  = (totalSteps/205920.0) * 100;
+            
+           }
+           else if(progressOfSteps >=100)
+           {
+               progressOfSteps = 100.0;
+               
+           }
+           
             trucatedDoubleForProgress = BigDecimal.valueOf(progressOfSteps)
                         .setScale(0, RoundingMode.HALF_UP)
                         .doubleValue();
             
+          
+            if((((int)progressOfSteps))>=100)
+            {  
+                progressOfSteps = 100.0;
+           
+            }
             //beggining of progress bar
             
               
@@ -530,9 +547,9 @@ public class SplashScreenServlet extends HttpServlet
             
             String percentComplete =""; 
           Double truncatedDouble1=0.0;
-        if( (int)progressOfSteps > 100)
+        if( (int)progressOfSteps >= 100)
         {
-            if((((int)progressOfSteps))>100)
+            if((((int)progressOfSteps))>=100)
             {
                 m.setTourfinished("true");
                 MemberDB.updateMember(m);
@@ -540,13 +557,21 @@ public class SplashScreenServlet extends HttpServlet
                 
                 session.setAttribute("member", m1);
                 tourFinished=true;
-                percentComplete = " The Tour is complete ";
-                request.setAttribute("progressofsteps",percentComplete);
+                //percentComplete = 
+                
+                tourFnished = " The Tour is complete ";     
+                request.setAttribute("tourFnished", tourFnished);
+                request.setAttribute("progressofsteps",progressOfSteps);
               
+                stepsFromDataBase = 205920;
+                
+                m.setTotalsteps(205920);
+                MemberDB.setTotalSteps(stepsFromDataBase, m);
+                
                 
             }
         }    
-        else
+        else if(((int)progressOfSteps) < 100)
             {
                 truncatedDouble1 = BigDecimal.valueOf(progressOfSteps)
                         .setScale(0, RoundingMode.HALF_UP)
@@ -2468,7 +2493,7 @@ public class SplashScreenServlet extends HttpServlet
                      187344-MemberDB.getCurrentSteps(m)>0))
             {
  
-                    msg3 = "Good Work! " + "Only " + (187334-MemberDB.getCurrentSteps(m)) + " steps to go "
+                    msg3 = "Good Work! " + "Only " + (187344-MemberDB.getCurrentSteps(m)) + " steps to go "
                      + " until the NEXT TOUR PLACE!";
                     m.setLoctorf24(false);
         
@@ -2494,7 +2519,7 @@ public class SplashScreenServlet extends HttpServlet
                      194726-MemberDB.getCurrentSteps(m)>0))
             {
  
-                    msg3 = "Good Work! " + "Only " + (194727-MemberDB.getCurrentSteps(m)) + " steps to go "
+                    msg3 = "Good Work! " + "Only " + (194726-MemberDB.getCurrentSteps(m)) + " steps to go "
                      + " until the NEXT TOUR PLACE!";
                     m.setLoctorf26(false);
         
@@ -2527,8 +2552,16 @@ public class SplashScreenServlet extends HttpServlet
                 
             }
             
-
-            
+  int steps3 =0;
+  if(MemberDB.getCurrentSteps(m)>=205920)
+  {
+      
+      steps3 = 205920;
+      MemberDB.setTotalSteps(steps3, m);
+      
+      request.setAttribute("progressOfSteps", progressOfSteps);
+      
+  }
 
         else
         {

@@ -128,6 +128,7 @@
                         
                         
     <center>
+               ${tourFinished} 
         <h2> ${progressofsteps}</h2>    
      <h2 style="color: #FFA500">  ${msgTooManySteps} </h2>
      ${msg2}
@@ -462,14 +463,14 @@
 			<h3 id = "progress-1">Progress</h3>
                         
                             
-                        
+                          ${tourFinished}  
                         
                           ${progressofsteps}  
                            
                          <%-- <button onclick="update(${percentcompleteforbar})" id="clickProgress">click to see progress in bar </button> --%>   
                           
                           
-                          <c:if test="${enterWasPressed&& noErrorsAbove && percentcompleteforbar gt 0}">        
+                          <c:if test="${enterWasPressed&& noErrorsAbove && percentcompleteforbar gt 0 && percentcompleteforbar lt 205921 }">        
                           
                               <div id="Progress_Status" > 
                             <div id="myprogressBar" >     </div> 

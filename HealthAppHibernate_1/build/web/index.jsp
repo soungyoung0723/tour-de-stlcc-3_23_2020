@@ -128,6 +128,7 @@
                         
                         
     <center>
+               ${tourFinished} 
         <h2> ${progressofsteps}</h2>    
      <h2 style="color: #FFA500">  ${msgTooManySteps} </h2>
      ${msg2}
@@ -462,14 +463,14 @@
 			<h3 id = "progress-1">Progress</h3>
                         
                             
-                        
+                          ${tourFinished}  
                         
                           ${progressofsteps}  
                            
                          <%-- <button onclick="update(${percentcompleteforbar})" id="clickProgress">click to see progress in bar </button> --%>   
                           
                           
-                          <c:if test="${enterWasPressed&& noErrorsAbove && percentcompleteforbar gt 0}">        
+                          <c:if test="${enterWasPressed&& noErrorsAbove && percentcompleteforbar gt 0 && percentcompleteforbar lt 205921 }">        
                           
                               <div id="Progress_Status" > 
                             <div id="myprogressBar" >     </div> 
@@ -530,38 +531,7 @@ function update(percentcompleteforbar)
 		</section>
 
 
-		<section id="reached-place" class="white-section">
-
-			<h3>Tour Places</h3>
-			<p>1) STLCC - Meremec</p>
-			<p>2) Museum of Transportation</p>
-			<p>3) STLCC - Wildwood Campus</p>			
-			<p>4) ???</p>
-			<p>5) ???</p>
-			<p>6) ???</p>
-			<p>7) STLCC - Corporate College</p>
-			<p>8) St.Louis Lambert International Airport</p>
-			<p>9) Musick Park</p>
-			<p>10) Imo's Pizza</p>
-			<p>11) STLCC - Florissant Valley</p>
-			<p>12) Koeneman Park</p>
-			<p>13) O'Fallon Park</p>
-			<p>14) Griot Museum of Black History</p>
-			<p>15) STLCC - Harrison Park</p>
-			<p>16) Contemporary Art</p>
-			<p>17) Pappy's Smokehouse</p>
-			<p>18) Ikea</p>
-			<p>19) STLCC - Forest Park</p>
-			<p>20) St.Louis Zoo</p>
-			<p>21) Eat at Gus' Pretzels</p>
-			<p>22) Ted Drewes</p>
-			<p>23) South County Center</p>
-			<p>24) Pink Galleon Billiards and games</p>
-			<p>25) Concord Bowl and Recreation</p>
-			<p>26) Concord Plaza STL</p>
-			<p>27) Laumeir Park</p>
-			<p>28) STLCC - Meramac</p>
-
+		
  <section id="reached-place" class="white-section">
       <h3>Tour Place Information</h3>
     <table class="table">
