@@ -107,7 +107,12 @@ color: #fff;
         } 
     -->  
   
-    
+   .input-info{
+  width: 50% ;
+  margin: 100px auto 150px auto;
+  text-align: left;
+}
+ 
 
 
 
